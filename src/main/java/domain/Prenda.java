@@ -3,10 +3,10 @@ package domain;
 public class Prenda {
   TipoPrenda tipo;
   Color colorPrincipal;
-  TipoMaterial material;
+  Material material;
   Color colorSecundario;
 
-  public Prenda(TipoPrenda tipo, Color colorPrincipal,TipoMaterial material, Color colorSecundario) {
+  public Prenda(TipoPrenda tipo, Color colorPrincipal,Material material, Color colorSecundario) {
     if(tipo == null) {
       throw new PrendaInvalidaException("falta explicitar el tipo");
     }
