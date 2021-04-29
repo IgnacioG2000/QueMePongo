@@ -1,4 +1,3 @@
-
 package domain;
 
 public class Borrador {
@@ -6,14 +5,7 @@ public class Borrador {
   Color colorPrimario;
   Color colorSecundario;
   Material material;
-
-  public Borrador(TipoPrenda tipoPrenda) {
-
-    if(tipoPrenda == null) {
-      throw new PrendaInvalidaException("falta explicitar el tipo");
-    }
-    this.tipoPrenda = tipoPrenda;
-  }
+  TramaMaterial trama;
 
   public Prenda crearPrenda() {
     if(tipoPrenda == null) {
@@ -25,7 +17,11 @@ public class Borrador {
     if(material == null) {
       throw new PrendaInvalidaException("falta explicitar el material");
     }
-    return new Prenda(tipoPrenda, colorPrimario, material, colorSecundario);
+    if(trama == null) {
+      this.asignarTrama(TramaMaterial.LISA);
+    }
+
+    return new Prenda(tipoPrenda, colorPrimario, material, colorSecundario,trama);
   }
 
   public void asignarColorPrimario(Color color) {
@@ -38,6 +34,13 @@ public class Borrador {
 
   public void asignarMaterial(Material material) {
     this.material = material;
+  }
+
+  public void asignarTipo(TipoPrenda tipo) {
+    this.tipoPrenda = tipo;
+  }
+  public void asignarTrama(TramaMaterial trama) {
+    this.trama = trama;
   }
 
 }
