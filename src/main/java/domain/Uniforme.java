@@ -6,20 +6,8 @@ public class Uniforme {
   Prenda calzado;
 
   public Uniforme(Prenda parteSuperior, Prenda parteInferior, Prenda calzado) {
-    agregarParteSuperior(parteSuperior);
-    agregarParteInferior(parteInferior);
-    agregarCalzado(calzado);
-  }
-
-  public void agregarParteInferior(Prenda unaParteInferior) {
-    this.parteInferior = unaParteInferior;
-  }
-
-  public void agregarParteSuperior(Prenda unaParteSuperior) {
-    this.parteSuperior = unaParteSuperior;
-  }
-
-  public void agregarCalzado(Prenda unCalzado) {
-    this.calzado = unCalzado;
+    this.parteSuperior = parteSuperior;
+    this.parteInferior = parteInferior;
+    this.calzado = calzado;
   }
 }

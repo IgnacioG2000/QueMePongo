@@ -1,9 +1,11 @@
 package domain;
 
 public enum Material {
-  CUERO,
-  JEAN,
+  TELA,
   ALGODON,
+  POLIESTER,
+  LANA,
+  JEAN,
   ACETATO,
-  PIQUE,
+  PIQUE
 }
