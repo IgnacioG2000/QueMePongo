@@ -3,10 +3,10 @@ package domain;
 public class Prenda {
   TipoPrenda tipo;
   Color colorPrincipal;
-  TipoMaterial material;
+  Material material;
   Color colorSecundario;
 
-  public Prenda(TipoPrenda tipo, Color colorPrincipal,TipoMaterial material, Color colorSecundario) {
+  public Prenda(TipoPrenda tipo, Color colorPrincipal,Material material, Color colorSecundario) {
     if(tipo == null) {
       throw new PrendaInvalidaException("falta explicitar el tipo");
     }
@@ -19,14 +19,7 @@ public class Prenda {
     this.tipo = tipo;
     this.colorPrincipal = colorPrincipal;
     this.material = material;
-    this.colorSecundario = colorSecundario; //Si no tiene color secundario, directamente lo inicializamos con null
-  }
-
-  // Aca quiero probar el requerimiento 6 de la primera iteracion pero no se si esta bien
-  void condiceCon(Categoria categoria) {
-    if(!(this.getCategoria() == categoria)) {
-      throw new PrendaInvalidaException(tipo + " no pertenece a " + categoria);
-    }
+    this.colorSecundario = colorSecundario; //Si no tiene color secundario, directamente se inicializa con null
   }
 
   public Categoria getCategoria() {
