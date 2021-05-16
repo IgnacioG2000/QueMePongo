@@ -8,23 +8,14 @@ public class Borrador {
   TramaMaterial trama;
 
   public Prenda crearPrenda() {
-    if(tipoPrenda == null) {
-      throw new PrendaInvalidaException("falta explicitar el tipo");
-    }
-    if(colorPrimario == null) {
-      throw new PrendaInvalidaException("falta explicitar el color principal");
-    }
-    if(material == null) {
-      throw new PrendaInvalidaException("falta explicitar el material");
-    }
-    if(trama == null) {
-      this.asignarTrama(TramaMaterial.LISA);
-    }
 
     return new Prenda(tipoPrenda, colorPrimario, material, colorSecundario,trama);
   }
 
   public void asignarColorPrimario(Color color) {
+    if(colorPrimario == null) {
+      throw new PrendaInvalidaException("falta explicitar el color principal");
+    }
     this.colorPrimario = color;
   }
 
@@ -33,13 +24,23 @@ public class Borrador {
   }
 
   public void asignarMaterial(Material material) {
+    if(material == null) {
+      throw new PrendaInvalidaException("falta explicitar el material");
+    }
     this.material = material;
   }
 
   public void asignarTipo(TipoPrenda tipo) {
+    if(tipoPrenda == null) {
+      throw new PrendaInvalidaException("falta explicitar el tipo");
+    }
     this.tipoPrenda = tipo;
   }
   public void asignarTrama(TramaMaterial trama) {
+    if(trama == null) {
+      this.asignarTrama(TramaMaterial.LISA);
+    }
+
     this.trama = trama;
   }
 
