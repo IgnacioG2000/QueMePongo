@@ -1,15 +1,18 @@
 package domain;
 
+import exceptions.PrendaInvalidaException;
+
 public class Borrador {
   TipoPrenda tipoPrenda;
   Color colorPrimario;
   Color colorSecundario;
   Material material;
   TramaMaterial trama;
+  double temperatura;
 
   public Prenda crearPrenda() {
 
-    return new Prenda(tipoPrenda, colorPrimario, material, colorSecundario,trama);
+    return new Prenda(tipoPrenda, colorPrimario, material, colorSecundario,trama,temperatura);
   }
 
   public void asignarColorPrimario(Color color) {
@@ -36,11 +39,11 @@ public class Borrador {
     }
     this.tipoPrenda = tipo;
   }
+  
   public void asignarTrama(TramaMaterial trama) {
     if(trama == null) {
       this.asignarTrama(TramaMaterial.LISA);
     }
-
     this.trama = trama;
   }
 
