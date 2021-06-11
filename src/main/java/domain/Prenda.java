@@ -1,12 +1,14 @@
 package domain;
 
 public class Prenda {
-  TipoPrenda tipo;
-  Color colorPrincipal;
-  Material material;
-  Color colorSecundario;
-  TramaMaterial trama;
-  double temperatura;
+  private TipoPrenda tipo;
+  private Color colorPrincipal;
+  private Material material;
+  private Color colorSecundario;
+  private TramaMaterial trama;
+  private double temperatura;
+  private AlertaAptaPara alertaOk;
+
 
   public Prenda(TipoPrenda tipo, Color colorPrincipal,Material material, Color colorSecundario, TramaMaterial trama, double temperatura) {
     this.tipo = tipo;
@@ -39,5 +41,9 @@ public class Prenda {
 
   public boolean esAccesorio() {
     return getCategoria() == Categoria.ACCESORIO;
+  }
+
+  public boolean sePuedeUsarEnEsaAlerta(Clima clima) {
+    return clima.getAlertas().contains(this.alertaOk);
   }
 }

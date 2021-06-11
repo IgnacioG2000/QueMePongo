@@ -3,6 +3,13 @@ package domain;
 import java.util.*;
 
 public class AccuWeatherAPI {
+  private Map<String, Object> alertas = new HashMap() {{
+    put("CurrentAlerts", Arrays.asList("STORM","HAIL"));
+  }};
+
+  public Map<String, Object> getAlertas(String ciudad) {
+    return alertas;
+  }
 
   public final List<Map<String, Object>> getWeather(String ciudad) {
     return Arrays.asList(new HashMap<String, Object>(){{

@@ -1,4 +1,4 @@
-package domain;
+package exceptions;
 
 public class RecomendacionException extends RuntimeException {
   public RecomendacionException(String causa) {

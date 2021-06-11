@@ -1,5 +1,7 @@
 package domain;
 
+import exceptions.RecomendacionException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,11 +9,27 @@ public class Usuario {
   private List<Guardarropa> guardarropas = new ArrayList<>();
   private List<Recomendacion> recomendaciones = new ArrayList<>();
   private List<Recomendacion> recomendacionesAceptadas = new ArrayList<>();
+  private List<Prenda> listaDiariaDeSugerencias;
+  private String email;
 
-  public Usuario(List<Guardarropa> guardarropas, List<Recomendacion> recomendaciones, List<Recomendacion> recomendacionesAceptadas) {
+  public Usuario(List<Guardarropa> guardarropas, List<Recomendacion> recomendaciones, List<Recomendacion> recomendacionesAceptadas, List<Prenda> listaDiariaDeSugerencias, String email) {
     this.guardarropas = guardarropas;
     this.recomendaciones = recomendaciones;
     this.recomendacionesAceptadas = recomendacionesAceptadas;
+    this.listaDiariaDeSugerencias = listaDiariaDeSugerencias;
+    this.email = email;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void cargarSugerencias(List <Prenda> lista){
+    this.listaDiariaDeSugerencias.addAll(lista);
+  }
+
+  public List<Prenda> getListaDiariaDeSugerencias() {
+    return this.listaDiariaDeSugerencias;
   }
 
   public void agregarRecomendacion(Recomendacion recomendacion){
@@ -46,4 +64,5 @@ public class Usuario {
     if(!lista.contains(recomendacion))
       throw new RecomendacionException(recomendacion + "no se encuentra en la lista de" + lista);
   }
+  
 }
